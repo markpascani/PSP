@@ -41,9 +41,11 @@ public class Server {
             System.out.println("Espera a que llegue una petición de socket.");
 
             // Acepta una conexión entrante de un cliente.
-            try (Socket clienteSocket = serverSocket.accept(); // Prepara un BufferedReader para leer los mensajes del cliente.
-                     BufferedReader entrada = new BufferedReader(new InputStreamReader(clienteSocket.getInputStream())); // Prepara un PrintWriter para enviar respuestas al cliente.
-                     PrintWriter salida = new PrintWriter(clienteSocket.getOutputStream(), true)) {
+            try (Socket clienteSocket = serverSocket.accept(); 
+                     BufferedReader entrada = new BufferedReader(new InputStreamReader(clienteSocket.getInputStream())); // Prepara un BufferedReader para leer los mensajes del cliente.
+                     PrintWriter salida = new PrintWriter(clienteSocket.getOutputStream(), true)// Prepara un PrintWriter para enviar respuestas al cliente.
+                    
+                    ) {
 
                 // Mensaje indicando que el cliente está conectado.
                 System.out.println("Cliente conectado.");
